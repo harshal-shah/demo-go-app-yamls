@@ -4,7 +4,7 @@ apiVersion: extensions/v1beta1
 metadata:
   name: demo-app-prod
 spec:
-  replicas: 4
+  replicas: 2
   template:
     metadata:
       name: demo-app
@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: harshals/demo-go-app:master.2
+        image: harshals/demo-go-app:master.4
         resources:
           limits:
             memory: "500Mi"
@@ -46,7 +46,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: harshals/demo-go-app:canary.2
+        image: harshals/demo-go-app:prod.6
         resources:
           limits:
             memory: "500Mi"
