@@ -1,0 +1,15 @@
+# Source: demo-go-app/templates/demo-app.yaml
+kind: Service
+apiVersion: v1
+metadata:
+  name: demo-app-lb-prod
+spec:
+  type: LoadBalancer
+  ports:
+  - name: http
+    port: 80
+    targetPort: 8000
+    protocol: TCP
+  selector:
+    app: demo-app
+    role: frontend
